@@ -10,7 +10,7 @@ before you can implement a solution to the problem in Python.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
          their colleagues and Sarah Cox.
-"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
+""" # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -28,7 +28,7 @@ import rosegraphics as rg
 def main():
     """ Calls the   TEST   functions in this module. """
     run_test_draw_parallel_lines()
-    #run_test_draw_lines()
+    run_test_draw_lines()
 
 
 def run_test_draw_parallel_lines():
@@ -96,7 +96,7 @@ def draw_parallel_lines(n, point, length, window):
       :type window: rg.RoseWindow
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # CONSIDER using the ACCUMULATOR IN GRAPHICS pattern,
@@ -113,15 +113,13 @@ def draw_parallel_lines(n, point, length, window):
     x = point.x
     y = point.y
 
-    length = rg.Point(point.x + length, point.y + length)
-
     for _ in range(n):
         point = rg.Point(x, y)
-        line = rg.Line(point, length)
+        line = rg.Line(point, rg.Point(x + length, y))
 
         line.attach_to(window)
 
-        x = x + (y - 30)
+        y = y + 30
 
     window.render()
 
@@ -189,6 +187,27 @@ def draw_lines(n, point, window):
     #          ** FIRST DO A CONCRETE EXAMPLE BY HAND! **
     ####################################################################
     # ------------------------------------------------------------------
+
+    x = point.x
+    y = point.y
+
+    if n >= 2:
+        for _ in range(n):
+            point = rg.Point(x, y)
+            line = rg.Line(point, rg.Point(x + 100, y))
+
+            for k in range(100):
+                y = y + (k + 1)
+
+            for k in range(-100):
+                y = y - (k - 1)
+
+            line.attach_to(window)
+
+
+
+        window.render()
+
 
 
 # ----------------------------------------------------------------------

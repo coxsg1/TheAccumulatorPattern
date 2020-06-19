@@ -1,3 +1,4 @@
+
 """
 rosegraphics.py - a simple Graphics library for Python.
 Its key feature is:
