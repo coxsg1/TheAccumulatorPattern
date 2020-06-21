@@ -113,8 +113,6 @@ def draw_squares_from_circle(n, circle, window):
     # ------------------------------------------------------------------
 
 
-
-
 def run_test_draw_circles_from_rectangle():
     """ Tests the   draw_circles_from_rectangle  function. """
     print()
